@@ -4,6 +4,10 @@ function start() {
   $("#submit-form").submit(handleForm);
 }
 
+function clearForm() {
+  $("input[type=text], textarea").val("");
+}
+
 function handleForm(event) {
   event.preventDefault();
   var userinput = $("#city-type").val();
@@ -22,6 +26,7 @@ function handleForm(event) {
     else {
       alert("Sorry it seems the city youre searching for isnt in our database.");
     }
+    clearForm();
 }
 
 function isSydney(name) {
